@@ -38,7 +38,7 @@ LocalStorage | Store user login data
 
 The project is deployed using **Vercel / GitHub Pages**.
 
-🔗 Live Demo: *(add link after deploy)*
+🔗 Live Demo: https://smart-shop-ayangithub2005s-projects.vercel.app/
 
 ## ✨ Created By
 **Ayan Kuila**
