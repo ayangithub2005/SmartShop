@@ -71,9 +71,10 @@ products_page.forEach(function (ele) {
     else if (selected === 'KIDS') {
       window.location.href = 'kids.html';
     } 
-    else {
-      window.location.href = 'home&living.html';
-    }
+   else if (selected === 'HOME & LIVING') {
+    window.location.href = 'home-living.html';
+}
+
   });
 });
 
