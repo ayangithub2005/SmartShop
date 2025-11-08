@@ -1,126 +1,108 @@
-/* navbar code (unchanged) */
-
+/* --- NAVBAR (unchanged) --- */
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: Whitney, Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Whitney, Arial, Helvetica, sans-serif;
 }
 
 #navbar {
-    width: 100%;
-    height: 80px;
-    display: grid;
-    grid-template-columns: 20% 30% 20%;
-    background-color: white;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    justify-content: space-between;
-    position: sticky;
-    top: 0px;
+  width: 100%;
+  height: 80px;
+  display: grid;
+  grid-template-columns: 20% 30% 20%;
+  background-color: #fff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
 }
 
-#left img {
-    height: 60px;
-    width: auto;
-    cursor: pointer;
-}
+#left img { height: 60px; width: auto; cursor: pointer; }
+#left, #right, #centre { display: flex; align-items: center; justify-content: center; }
 
-#left, #right, #centre {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* ✅ Center Body */
+/* --- PAGE LAYOUT (center the form) --- */
 body {
-    background: #f7f7f7;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* ✅ Modern Address Box */
+/* Card holding the form */
 #address_container {
-    width: 380px;
-    background: #fff;
-    margin-top: 30px;
-    padding: 25px 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  width: 380px;
+  background: #fff;
+  margin-top: 30px;
+  padding: 25px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
-#address_container h5 {
-    font-size: 18px;
-    margin-bottom: 12px;
-    font-weight: 600;
-}
-
+#address_container h5 { font-size: 18px; margin-bottom: 12px; font-weight: 600; }
 #address_container input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 15px;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
 }
 
-/* ✅ Submit Button Box */
+/* Submit button section */
 #button {
-    width: 380px;
-    margin-top: 15px;
+  width: 380px;
+  margin: 15px 0 40px;
 }
 
 #button > button {
-    width: 100%;
-    padding: 14px;
-    background: #ff3f6c;
-    border: none;
-    border-radius: 8px;
-    color: #fff;
-    font-size: 17px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.2s ease;
+  width: 100%;
+  padding: 14px;
+  background: #ff3f6c;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 17px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s ease;
 }
+#button > button:hover { background: #e2335e; }
 
-#button > button:hover {
-    background: #e2335e;
-}
-
-/* ✅ Popup Styles */
+/* --- POPUP (hide until open; fix big green tick issue) --- */
 .popup {
-    width: 320px;
-    background: #fff;
-    border-radius: 10px;
-    text-align: center;
-    padding: 20px;
-    border: 1px solid #ddd;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%,-50%) scale(0.1);
-    visibility: hidden;
-    transition: 0.3s ease-in-out;
+  width: 320px;
+  background: #fff;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+  position: fixed;                 /* fixed so it stays centered */
+  top: -100%;                      /* keep off-screen by default */
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  visibility: hidden;
+  z-index: 9999;                   /* above everything */
+  transition: transform 0.3s, top 0.3s;
 }
 
 .open-popup {
-    visibility: visible;
-    top: 40%;
-    transform: translate(-50%,-50%) scale(1);
+  visibility: visible;
+  top: 40%;
+  transform: translate(-50%, -50%) scale(1);
 }
 
-.popup img {
-    width: 60px;
-    margin-bottom: 10px;
-}
-
+.popup img { width: 60px; margin-bottom: 10px; }
+.popup h2 { font-size: 28px; margin: 10px 0; }
 .popup button {
-    padding: 10px;
-    width: 100%;
-    border: none;
-    background: #159538;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  background: #159538;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }
+/* TEMP TEST */
+body { outline: 4px solid #00cc88; }
